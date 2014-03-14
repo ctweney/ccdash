@@ -15,7 +15,7 @@ var parseStats = function(stats) {
 
 var scrapeStats = function() {
   request({
-    url: process.env.STATS_URL,
+    url: process.env.STATS_URL || "http://localhost:3000/api/stats",
     rejectUnauthorized: false
   }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
@@ -27,7 +27,7 @@ var scrapeStats = function() {
 };
 
 var init = function() {
-  setInterval(scrapeStats, 4000);
+  setInterval(scrapeStats, 10000);
 };
 
 module.exports = {
