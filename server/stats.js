@@ -15,7 +15,7 @@ var parseStats = function(stats) {
 
 var scrapeStats = function() {
   request({
-    url: 'http://localhost:3000/api/stats',
+    url: process.env.STATS_URL,
     rejectUnauthorized: false
   }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
