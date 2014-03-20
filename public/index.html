@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div class="ccdash-block ccdash-state-item ccdash-state-successful">
+  <div class="ccdash-block ccdash-state-item {{data.stats.hot_plate.state}}">
     <h2>
       hot plate
     </h2>
@@ -47,8 +47,7 @@
         <span ng-hide="data.stats.hot_plate.last_batch_size">--</span>
         <a ng-href="TODO" ng-bind="data.stats.hot_plate.last_batch_size"></a> users
       </div>
-      <div>
-        <span ng-hide="data.stats.hot_plate.outstanding_warmups">--</span>
+      <div ng-show="data.stats.hot_plate.outstanding_warmups">
         <a ng-href="TODO" ng-bind="data.stats.hot_plate.outstanding_warmups"></a> pending
       </div>
       <div>
@@ -58,7 +57,7 @@
     </div>
   </div>
 
-  <div class="ccdash-block ccdash-state-item ccdash-state-successful">
+  <div class="ccdash-block ccdash-state-item {{data.stats.live_updates_warmer.state}}">
     <h2>
       live updates
     </h2>
