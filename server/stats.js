@@ -32,7 +32,7 @@ var parseStats = function(stats) {
 
 var scrapeStats = function() {
   request({
-    url: process.env.STATS_URL || "http://localhost:3000/api/stats",
+    url: process.env.STATS_URL || "https://calcentral.berkeley.edu/api/stats",
     rejectUnauthorized: false
   }, function (error, response, body) {
     if (!error && response.statusCode === 200) {
